@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link to="/profile">View Profile</Link>
             </div>
             <div >
-            <button className={`text-gray-300 font-thin hover:underline ${text==="Login"?"hidden":"block"}`} onClick={logoutfunction()}>Logout</button>
+            <button className={`text-gray-300 font-thin hover:underline ${text==="Login"?"hidden":"block"}`} onClick={logoutfunction}>Logout</button>
             </div>
         </div>
     );
