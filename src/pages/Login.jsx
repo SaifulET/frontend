@@ -7,6 +7,7 @@ import Cookies from "js-cookie"
 import Navbar from "../components/Navbar";
 
 const Login = () => {
+  
   const {setText}=UserStore()
   const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -14,7 +15,23 @@ const Login = () => {
     password: "",
   });
   const [error,setError]=useState("")
-
+useEffect(()=>{
+    (async()=>{
+axios.get("/user",{
+  withCredentials: true,
+})
+     .then((res)=>{ 
+      if(res.status===200){
+        setText(res.data.user.name);
+        navigate("/");
+      }
+      
+    })
+    .catch(()=>{
+      setText("Login");
+    })
+    })()
+  },[])
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
