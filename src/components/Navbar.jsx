@@ -9,6 +9,7 @@ const Navbar = () => {
       const logoutfunction=()=>{
          logout();
           setText("Login")
+          navigate("/login");
       }
     return (
         <div className='w-full h-10 text-xl   text-white flex items-center justify-center flex-col pr-10' >
