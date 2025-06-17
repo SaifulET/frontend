@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import Cookies from "js-cookie";
+import axios from 'axios';
 
 
 const UserStore = create((set) => ({
@@ -10,6 +11,9 @@ const UserStore = create((set) => ({
   logout:async()=>{
 
     Cookies.remove("token");
+    await axios.get("/delete",{
+  withCredentials: true,
+});
     set({text:"Login"})
 
   }
