@@ -13,7 +13,7 @@ const Profile = ({ userId }) => {
   }, [userId]);
 
   const fetchUser=async()=>{
-axios.get('/user',{
+await axios.get('/user',{
   withCredentials: true,
 })
       .then(res => {
