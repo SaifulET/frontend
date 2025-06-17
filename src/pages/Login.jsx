@@ -5,10 +5,8 @@ import UserStore from "../store/UserStore";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie"
 import Navbar from "../components/Navbar";
-import Cookies from 'js-cookie';
 
 const Login = () => {
-  
   const {setText}=UserStore()
   const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -16,7 +14,6 @@ const Login = () => {
     password: "",
   });
   const [error,setError]=useState("")
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,8 +26,9 @@ const Login = () => {
   withCredentials: true   
 })
     .then((res)=>{
+      console.log(res)
         if(res.status===200){
-          
+          Cookies.set("token", res.data.token);
           setText(res.data.user.name);
           navigate("/")
         }
@@ -51,7 +49,7 @@ const Login = () => {
 
   return (
     <div>
-      
+      <Navbar/>
       <div className="flex items-center justify-center h-screen bg-green-700">
         <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center max-w-sm mx-auto space-y-4 p-10 h-[50%] bg-gray-700 border  rounded">
       <div>
