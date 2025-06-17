@@ -7,44 +7,19 @@ const KanbanBoard = () => {
     todo: {
       name: "To Do",
       items: [
-        {
-          id: "1",
-          title: "Market Research",
-          description: "Gather all recent market trends and statistics.",
-          dueDate: "2025-07-01",
-          extra: "Priority High"
-        },
-        {
-          id: "2",
-          title: "Write Project",
-          description: "Complete the first draft of the project document.",
-          dueDate: "2025-07-05",
-          extra: ""
-        }
+
       ]
     },
     inProgress: {
       name: "In Progress",
       items: [
-        {
-          id: "3",
-          title: "Design UI mockups",
-          description: "Create wireframes and high fidelity mockups.",
-          dueDate: "2025-06-25",
-          extra: ""
-        }
+        
       ]
     },
     done: {
       name: "Done",
       items: [
-        {
-          id: "4",
-          title: "Set up Repository",
-          description: "Initialized git repo and pushed initial commit.",
-          dueDate: "2025-06-20",
-          extra: ""
-        }
+        
       ]
     }
   });
