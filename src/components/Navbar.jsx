@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const {text,logout} = UserStore()
+    const {text,setText,logout} = UserStore()
       const navigate = useNavigate();
       const logoutfunction=async()=>{
         await logout();
+          setText("Login")
         navigate("/login")
       }
     return (
