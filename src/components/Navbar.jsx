@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
     const {text,setText,logout} = UserStore()
       const navigate = useNavigate();
-      const logoutfunction=async()=>{
-        await logout();
+      const logoutfunction=()=>{
+         logout();
           setText("Login")
       }
     return (
