@@ -5,6 +5,7 @@ import UserStore from "../store/UserStore";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie"
 import Navbar from "../components/Navbar";
+import Cookies from 'js-cookie';
 
 const Login = () => {
   
@@ -17,7 +18,9 @@ const Login = () => {
   const [error,setError]=useState("")
 useEffect(()=>{
     (async()=>{
-axios.get("/user",{
+      const token = Cookies.get('token');
+      if(token){
+        axios.get("/user",{
   withCredentials: true,
 })
      .then((res)=>{ 
@@ -31,7 +34,8 @@ axios.get("/user",{
       setText("Login");
     })
     })()
-  },[])
+  },[])}
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
