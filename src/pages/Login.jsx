@@ -47,7 +47,6 @@ useEffect(()=>{
   withCredentials: true   
 })
     .then((res)=>{
-      console.log(res)
         if(res.status===200){
           Cookies.set("token", res.data.token);
           setText(res.data.user.name);
