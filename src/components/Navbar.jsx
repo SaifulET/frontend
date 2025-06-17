@@ -7,7 +7,7 @@ const Navbar = () => {
     const {text,logout} = UserStore()
       const navigate = useNavigate();
       const logoutfunction=async()=>{
-        logout();
+        await logout();
         navigate("/login")
       }
     return (
