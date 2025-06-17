@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import UserStore from "../store/UserStore";
 import { useNavigate } from "react-router-dom";
@@ -16,25 +16,7 @@ const Login = () => {
     password: "",
   });
   const [error,setError]=useState("")
-useEffect(()=>{
-    (async()=>{
-      const token = Cookies.get('token');
-      if(token){
-        axios.get("/user",{
-  withCredentials: true,
-})
-     .then((res)=>{ 
-      if(res.status===200){
-        setText(res.data.user.name);
-        navigate("/");
-      }
-      
-    })
-    .catch(()=>{
-      setText("Login");
-    })
-    })()
-  },[])}
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
