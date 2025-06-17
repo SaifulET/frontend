@@ -9,9 +9,7 @@ const UserStore = create((set) => ({
     set({ text: newText });
   },
   logout:async()=>{
-    sessionStorage.clear()
-    localStorage.clear()
-
+    
     Cookies.remove("token");
    
     set({text:"Login"})
