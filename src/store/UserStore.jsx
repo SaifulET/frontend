@@ -11,9 +11,7 @@ const UserStore = create((set) => ({
   logout:()=>{
     
     Cookies.remove("token");
-   console.log(text)
     set({text:"Login"})
-console.log(text)
   }
 }));
 
