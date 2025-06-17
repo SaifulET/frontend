@@ -8,7 +8,6 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://backend-git-main-saifuls-projects-2ab36682.vercel.app/api';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+ 
+  <App />
 )

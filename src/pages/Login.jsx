@@ -22,7 +22,9 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/login",{email:formData.email,password:formData.password})
+    axios.post("/login",{email:formData.email,password:formData.password}, {
+  withCredentials: true   
+})
     .then((res)=>{
       console.log(res)
         if(res.status===200){

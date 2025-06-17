@@ -10,20 +10,24 @@ const Home = () => {
   const {setText}=UserStore()
    const navigate = useNavigate();
   useEffect(()=>{
-    axios.get("/user",{
+    (async()=>{
+axios.get("/user",{
   withCredentials: true,
 })
      .then((res)=>{
+      console.log("ldksld") 
       if(res.status===200){
-        setText(res.data.user.name);       
+        setText(res.data.user.name);    
+        console.log("ldksld")   
       }
       
     })
     .catch((e)=>{
-      console.log(e)
+      console.log(e,"aaa")
       setText("Login");
-      navigate('/login');
+      navigate('/');
     })
+    })()
   },[])
     return (
     <div>
