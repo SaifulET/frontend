@@ -8,7 +8,7 @@ const UserStore = create((set) => ({
   setText: (newText) => {
     set({ text: newText });
   },
-  logout:async()=>{
+  logout:()=>{
     
     Cookies.remove("token");
    console.log(text)
