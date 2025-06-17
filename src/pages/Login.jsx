@@ -30,7 +30,7 @@ const Login = () => {
 })
     .then((res)=>{
         if(res.status===200){
-          Cookies.set("token", res.data.token);
+          
           setText(res.data.user.name);
           navigate("/")
         }
