@@ -11,9 +11,7 @@ const UserStore = create((set) => ({
   logout:async()=>{
 
     Cookies.remove("token");
-    await axios.get("/delete",{
-  withCredentials: true,
-});
+   
     set({text:"Login"})
 
   }
