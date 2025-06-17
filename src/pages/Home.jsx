@@ -7,15 +7,17 @@ import axios from 'axios';
 
 
 const Home = () => {
-  const {setText}=UserStore()
+  const {setText,text}=UserStore()
    const navigate = useNavigate();
+  
   useEffect(()=>{
     (async()=>{
-axios.get("/user",{
+if(text==="Login") navigate("/login")
+      else{
+        axios.get("/user",{
   withCredentials: true,
 })
      .then((res)=>{
-      console.log("ldksld") 
       if(res.status===200){
         setText(res.data.user.name);    
         console.log("ldksld")   
@@ -25,8 +27,9 @@ axios.get("/user",{
     .catch((e)=>{
       console.log(e,"aaa")
       setText("Login");
-      navigate('/login');
+      navigate('/');
     })
+      }
     })()
   },[])
     return (
