@@ -25,7 +25,7 @@ axios.get("/user",{
     .catch((e)=>{
       console.log(e,"aaa")
       setText("Login");
-      navigate('/');
+      navigate('/login');
     })
     })()
   },[])
