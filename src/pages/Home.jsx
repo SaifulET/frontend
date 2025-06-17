@@ -12,6 +12,7 @@ const Home = () => {
   
   useEffect(()=>{
     (async()=>{
+      console.log(text);
 if(text==="Login") navigate("/login")
       else{
         await axios.get("/user",{
