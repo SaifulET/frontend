@@ -14,7 +14,7 @@ const Home = () => {
     (async()=>{
 if(text==="Login") navigate("/login")
       else{
-        axios.get("/user",{
+        await axios.get("/user",{
   withCredentials: true,
 })
      .then((res)=>{
