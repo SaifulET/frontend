@@ -17,10 +17,10 @@ const Register = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-     axios.post("/register",{email:formData.email,password:formData.password,name:formData.name})
+     await axios.post("/register",{email:formData.email,password:formData.password,name:formData.name})
       .then((res)=>{
         console.log(res.data.user.name, res.status)
         if(res.status===200){ 
