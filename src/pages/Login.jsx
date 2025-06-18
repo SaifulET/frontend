@@ -29,6 +29,7 @@ const Login = () => {
       console.log(res)
         if(res.status===200){
           Cookies.set("token", res.data.token);
+          console.log(res.data.user.name)
           setText(res.data.user.name);
           navigate("/")
         }
