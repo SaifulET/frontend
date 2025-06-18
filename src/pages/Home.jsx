@@ -18,6 +18,7 @@ if(text==="Login") navigate("/login")
   withCredentials: true,
 })
      .then((res)=>{
+       console.log("res.data",res.data)
       if(res.status===200){
             
         console.log("ldksld")   
