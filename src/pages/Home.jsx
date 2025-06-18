@@ -19,7 +19,7 @@ if(text==="Login") navigate("/login")
 })
      .then((res)=>{
       if(res.status===200){
-        setText(res.data.user.name);    
+            
         console.log("ldksld")   
       }
       
