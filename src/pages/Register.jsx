@@ -20,7 +20,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-     await axios.post("/register",{email:formData.email,password:formData.password,name:formData.name})
+     await axios.post("/register",{email:formData.email,password:formData.password,name:formData.name},{
+  withCredentials: true   
+})
       .then((res)=>{
         console.log(res.data.user.name, res.status)
         if(res.status===200){ 
