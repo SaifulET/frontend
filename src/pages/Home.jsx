@@ -25,8 +25,8 @@ if(text==="Login") navigate("/login")
       
     })
     .catch((e)=>{
-      console.log(e,"aaa")
-      setText("Login");
+      console.log(e,text "  aaa")
+      
       navigate('/');
     })
       }
