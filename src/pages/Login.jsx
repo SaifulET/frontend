@@ -31,7 +31,7 @@ const Login = () => {
           Cookies.set("token", res.data.token);
           console.log(res.data.user.name)
           setText(res.data.user.name);
-          navigate("/")
+          // navigate("/login")
         }
         
     
