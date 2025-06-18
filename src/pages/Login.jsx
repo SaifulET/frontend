@@ -26,7 +26,7 @@ const Login = () => {
   withCredentials: true   
 })
     .then((res)=>{
-      console.log(res)
+      console.log(res.status,res.data.user)
         if(res.status===200){
           Cookies.set("token", res.data.token);
           console.log(res.data.user.name)
